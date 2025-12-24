@@ -1,0 +1,284 @@
+body {
+   margin: 0;
+  min-height: 100vh;
+
+  background-image: url("img/fondo navidad.png"); /* TU IMAGEN */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: Arial, sans-serif;
+  color: #0c5817;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 4em;
+  letter-spacing: 5px;
+  transform: scaleX(1.08);
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day {
+  background: #dfe91484;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.day.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.game {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 80%;
+  margin: 10px 0;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #e75480;
+  color: white;
+  cursor: pointer;
+}
+
+.reward {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* no bloquea clicks */
+  z-index: -1; /* queda detrás del contenido */
+}
+
+.day {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day:hover:not(.locked) {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.reward {
+  animation: aparecer 0.6s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.main-title {
+  color: #0c5817;
+}
+
+.qr-img {
+  width: 180px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.music-btn {
+  position: fixed;
+  top: 650px;
+  right: 40px;
+  z-index: 9999;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  color: #0c5817;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+#lights-off {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: #000;
+  overflow: hidden;
+  cursor: none;
+}
+
+#lights-off {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: black;
+  overflow: hidden;
+  cursor: none;
+}
+
+/* capa negra con linterna */
+#lights-off::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 80px at var(--x, -100px) var(--y, -100px),
+    transparent 0%,
+    transparent 40%,
+     rgb(150, 8, 8) 70%
+  );
+  pointer-events: none;
+}
+
+/* emojis ocultos */
+.emoji {
+  position: absolute;
+  font-size: 28px;
+}
+
+
+/* Posiciones (podés cambiarlas) */
+.e1 { top: 30px; left: 40px; }
+.e2 { top: 220px; left: 80px; }
+.e3 { top: 100px; left: 260px; }
+.e4 { top: 60px; right: 40px; }
+.e5 { bottom: 30px; right: 120px; }
+
+#escape-area {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#fake-gift {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+#escape-area {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#fake-gift {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+#real-gift {
+  position: fixed;
+  bottom: 40px;
+  left: 250px;
+
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: auto;
+
+  /* ÁREA DETECTABLE */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.25s ease, transform 0.2s ease;
+}
+
+/* 👀 cuando el mouse PASA POR ENCIMA */
+#real-gift:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+
+#hint-text {
+  margin-top: 12px;
+  font-style: italic;
+  color: #ffd6d6;
+  opacity: 0.9;
+  animation: aparecer 0.6s ease;
+}
+
+.final-btn {
+  font-size: 1.2em;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff5fa2, #ff8ccf);
+  box-shadow: 0 0 15px rgba(255, 95, 162, 0.6);
+}

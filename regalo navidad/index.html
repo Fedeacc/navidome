@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>titulo del archivoo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+    <span class="material-icons">volume_up</span>
+  </button>
+
+  <canvas id="snow"></canvas>
+
+  <div class="container">
+
+    <h1 class="main-title">FELIZ NAVIDAD AMOR</h1>
+
+    <p class="intro">
+      BIENVENIDA A TU WEB INTERACTIVA.<br>
+      RESOLVÉ LOS DISTINTOS PUZZLES PARA DESBLOQUEAR TU REGALO (algunos tienen trampa).<br>
+      CADA PUZZLE DEVUELVE UN DÍGITO QUE LUEGO VAS A INGRESAR EN ORDEN.<br>
+      ¡BUENA SUERTE Y FELICES FIESTAS! 🎄❤️ TE AMO!!
+    </p>
+
+    <div id="days" class="days"></div>
+
+    <div id="game" class="game hidden">
+      <h2 id="dayTitle"></h2>
+      <p id="question"></p>
+      <p id="hint" class="hint hidden"></p>
+
+      <input type="text" id="answerInput" placeholder="Escribí tu respuesta">
+      <button id="answerBtn">Responder</button>
+
+
+      <p id="feedback"></p>
+      <div id="reward" class="reward hidden"></div>
+    </div>
+
+  </div>
+
+  <!-- 🎁 REGALO REAL (ID CORRECTO) -->
+  <div id="real-gift">🎁</div>
+
+  <!-- 🎵 MÚSICA -->
+  <audio id="bg-music" loop>
+    <source src="audio/Wham! - Last Christmas (Lyrics).mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
