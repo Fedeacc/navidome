@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para vos ❤️</title>
+
+  <!-- CSS propio de la carta -->
+  <link rel="stylesheet" href="carta.css">
+
+  <!-- Fuente opcional -->
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== PANTALLA BLOQUEADA ===== -->
+  <div id="lock-screen">
+
+    <h2>Ingresá el código final ❤️</h2>
+
+    <input
+      id="codeInput"
+      type="password"
+      maxlength="4"
+      placeholder="••••"
+      autocomplete="off"
+    >
+
+    <button id="unlockBtn">Desbloquear</button>
+
+    <p id="codeFeedback"></p>
+
+    <!-- 🔒 Candado -->
+    <div id="lock" class="lock">🔒</div>
+
+  </div>
+
+  <!-- ⭐ Efectos -->
+  <div id="stars"></div>
+  <canvas id="snow"></canvas>
+
+  <!-- ===== CARTA ===== -->
+  <div id="letter" class="hidden">
+
+    <div class="letter-box">
+      <h1>Para vos</h1>
+
+      <p>
+        Si estás leyendo esto, es porque llegaste hasta el final;
+        Porque tuviste paciencia, curiosidad y ganas de seguir.
+      </p>
+
+      <p>
+        Solo quiero desearte una feliz navidad y sobre todo que estemos compartiendo juntos este momento.
+      </p>
+
+      <p>
+        Gracias por estar, por ser,
+        y por hacer de cada día algo especial.
+      </p>
+
+      <p>
+       Mi regalo mas grande esta navidad es tu compañía, y espero tener ese regalo toda mi vida.
+      </p>
+      
+      <p>
+        y hablando de regalos...Seguro estes esperando una llave, deberias buscar en algo mio que se ubica a tu alrededor...
+        pista: es algo que se remonta a nuestro primer beso.
+    </p>
+
+      <p class="signature">
+        Con todo mi amor -FEFE❤️
+      </p>
+    </div>
+
+  </div>
+
+  <!-- JS de la carta -->
+  <script src="carta.js"></script>
+
+</body>
+</html>
